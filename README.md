@@ -1,5 +1,11 @@
 # Node - OpenAI
 
+## Prerequisite
+1. NodeJS >=18.17 
+2. PostgreSQL
+3. Typescript
+4. OpenAI Account
+
 ## Install dependencies
 
 By default, dependencies were installed when this application was generated.
@@ -14,6 +20,10 @@ To only install resolved dependencies in `package-lock.json`:
 ```sh
 npm ci
 ```
+
+## Replace the environment
+
+To replace `.env.example` to `.env` and configure the database and openai key values
 
 ## Run the application
 
