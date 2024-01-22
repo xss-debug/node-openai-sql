@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    div.container(class='card m-10 mt-3')  
+        h2(class="text-center text-primary") ChatBot - Node - OpenAI 
+        div(class="card chat-container")     
+            div(class='card-body')
+                if !error
+                    each res in data
+                        div(class='col-12')  
+                            div(style='float:left')
+                                div(class='message from')
+                                    p(class='sb14') #{res.que}
+                                div(class='msg-round-left')
+                                    span(class="tile d-inline-block text-center") U
+                            div(style='float:right;margin-top:40px')
+                                div(class='message to')
+                                    p(class='sb13')  #{res.ans}
+                                div(class='msg-round-right')
+                                    span(class="tile d-inline-block text-center") A          
+        form(method="POST" action="/chatbot")  
+            div(class='row col-12 mt-3')    
+                    div(class='col-md-10')
+                        div(class="input-group")
+                            span(class="input-group-text" id="basic-addon1") @
+                            input(type="text" id="message" name="message" class="form-control form-control-lg" placeholder="Type a message..." required autofocus)
+                    div(class='col-md-2 d-grid gap-1 mb-4')
+                            - var buttonClass=['btn', 'btn-lg', 'btn-primary'];
+                            button(class=buttonClass type="submit") Send  
+                                img(src="/assets/images/send-button.svg") 
+
+                    
